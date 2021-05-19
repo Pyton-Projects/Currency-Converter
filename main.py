@@ -1,3 +1,29 @@
+import tkinter.ttk
+from tkinter import*
+from ttkthemes import ThemedTk
+from tkinter import messagebox
+from currency_converter import CurrencyConverter
+converter_=CurrencyConverter()
+root=ThemedTk(themebg=True)
+currencies_form=('Us Dollar (USD)','Indian Rupee (INR)','Japanese yen (JPY)','Bulgarian lev (BGN)','Czech koruna (CZK)','Danish krone (DKK)','Hungarian forint (HUF)','Polish zloty (PLN)','Romanian leu (RON)','Swedish krona (SEK)','Swiss franc (CHF)','Icelandic krona (ISK)','Norwegian krone (NOK)','Croatian kuna (HRK)','Russian rouble (RUB)','Turkish lira (TRY)','Australian dollar (AUD)','Brazilian real (BRL)','Canadian dollar (CAD)','Hong Kong dollar (HKD)','Indonesian rupiah (IDR)','Israeli shekel (ILS)','South Korean won (KRW)','Mexican peso (MXN)','Malaysian ringgit (MYR)','New Zealand dollar (NZD)','Philippine peso (PHP)','Singapore dollar (SGD)','Thai baht (THB)','South African rand (ZAR)')
+currencies_to=('Us Dollar (USD)','Indian Rupee (INR)','Japanese yen (JPY)','Bulgarian lev (BGN)','Czech koruna (CZK)','Danish krone (DKK)','Hungarian forint (HUF)','Polish zloty (PLN)','Romanian leu (RON)','Swedish krona (SEK)','Swiss franc (CHF)','Icelandic krona (ISK)','Norwegian krone (NOK)','Croatian kuna (HRK)','Russian rouble (RUB)','Turkish lira (TRY)','Australian dollar (AUD)','Brazilian real (BRL)','Canadian dollar (CAD)','Hong Kong dollar (HKD)','Indonesian rupiah (IDR)','Israeli shekel (ILS)','South Korean won (KRW)','Mexican peso (MXN)','Malaysian ringgit (MYR)','New Zealand dollar (NZD)','Philippine peso (PHP)','Singapore dollar (SGD)','Thai baht (THB)','South African rand (ZAR)')
+root.set_theme('ubuntu')
+root.title('CurrencyConverter')
+root.minsize(450,200)
+root.maxsize(450,200)
+heading=ttk.Label(root,text='Currency Converter',font=('Courier',15,'bold'))
+heading.pack()
+currency_value=StringVar()
+currencies_value_to=StringVar()
+Amount_value=StringVar()
+from_=ttk.Combobox(root,value=currencies_form,width=22,textvariable=currency_value)
+from_.place(x=50,y=40)
+currency_value.set('Us Dollar (USD)')
+currencies_value_to.set('Indian Rupee (INR)')
+to_=ttk.Combobox(root,value=currencies_to,width=22,textvariable=currencies_value_to)
+to_.place(x=295,y=40)
+from_['state']='readonly'
+to_['state']='readonly'
 def conversion():
 	reverse=(currency_value.get()[::-1])
 	codes_=(reverse[1:4:])
