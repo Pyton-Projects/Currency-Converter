@@ -48,6 +48,7 @@ def conversion():
 			Amount_.set(value___)
 			amount_reslut.place(x=135)
 			messagebox.showinfo('Info',f'Converted Amount:-{value___}')
+			print('Converted!')
 		else:
 			messagebox.showinfo('Info','Not Converted! Currency Is Not Correct Or Check Your Network Connection Speed Is Slow Or Not If Slow Thats Why Currency Is Not Converted! If Your Connection Speed Is Fast MayBe Thats A Bug In My Programme You Are Free To Report Me At Mail:rishiratanpandey@gmail.com Or Check Network Connectivity!')
 	except UnboundLocalError:
