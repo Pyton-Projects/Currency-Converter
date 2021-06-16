@@ -9,8 +9,9 @@ currencies_form=('Us Dollar (USD)','Indian Rupee (INR)','Japanese yen (JPY)','Eu
 currencies_to=('Us Dollar (USD)','Indian Rupee (INR)','Japanese yen (JPY)','Euro (EUR)','Bulgarian lev (BGN)','Czech koruna (CZK)','Danish krone (DKK)','Hungarian forint (HUF)','Polish zloty (PLN)','Swedish krona (SEK)','Swiss franc (CHF)','Icelandic krona (ISK)','Norwegian krone (NOK)','Croatian kuna (HRK)','Russian rouble (RUB)','Turkish lira (TRY)','Australian dollar (AUD)','Brazilian real (BRL)','Canadian dollar (CAD)','Hong Kong dollar (HKD)','Indonesian rupiah (IDR)','South Korean won (KRW)','Mexican peso (MXN)','Malaysian ringgit (MYR)','New Zealand dollar (NZD)','Philippine peso (PHP)','Singapore dollar (SGD)','Thai baht (THB)','South African rand (ZAR)','Vietnamese Dong (VND)','Uzbekistani Som (UZS)','Uruguayan Peso (UYU)','British Pound (GBP)','Ukrainian Hryvnia (UAH)','Ugandan Shilling (UGX)','Tunisian Dinar (TND)','Tanzanian Shilling (TZS)','New Taiwan Dollar (TWD)','Swiss Franc (CHF)','Sri Lankan Rupee (LKR)','Singapore Dollar (SGD)','Saudi Riyal (SAR)','Poland Złoty (PLN)','Peruvian Sol (PEN)','Paraguay Guarani (PYG)','Panamanian Balboa (PAB)','Pakistani Rupee (PKR)','Omani Rial (OMR)','Norwegian Krone (NOK)','Nigerian Naira (NGN)','Nicaraguan Cordoba (NIO)','New Zealand Dollar (NZD)','Nepalese Rupee (NPR)','Burmese Kyat (MMK)','Moroccan Dirham (MAD)','Mexican Peso (MXN)','Mauritian Rupee (MUR)','Malaysia Ringgit (MYR)','Lebanese Pound (LBP)','Kuwaiti Dinar (KWD)','Kenyan Shilling (KES)','Kazakhstani Tenge (KZT)','Jordanian Dinar (JOD)','Indonesian Rupiah (IDR)','Hungarian Forint (HUF)','Guatemalan Quetzal (GTQ)','Georgian Lari (GEL)','Ethiopian Birr (ETB)','Egyptian Pound (EGP)','Dominican Peso (DOP)','Costa Rican Colon (CRC)','Chilean Peso (CLP)','Canadian Dollar (CAD)','Cambodian Riel (KHR)','Brazilian Real (BRL)','Bangladeshi Taka (BDT)','Bahraini Dinar (BHD)','Argentinian Peso (ARS)','Angola Kwanza (AOA)','Algerian Dinar (DZD)')
 root.set_theme('ubuntu')
 root.title('CurrencyConverter')
-root.minsize(450,200)
-root.maxsize(450,200)
+root.geometry('450x200')
+# root.minsize(450,200)
+# root.maxsize(450,200)
 heading=ttk.Label(root,text='Currency Converter',font=('Courier',15,'bold'))
 heading.pack()
 currency_value=StringVar()#unit converter and add more sound effect to my dekstop remainder project!
@@ -45,10 +46,7 @@ def conversion():
 		for value___ in total_amount:
 			pass
 		if value11==' true':
-			Amount_.set(value___)
-			amount_reslut.place(x=135)
-			messagebox.showinfo('Info',f'Converted Amount:-{value___}')
-			print('Converted!')
+			Amount_.set(f'{Amount_value.get()} {working_codes_from} = {value___} {working_codes_to}')
 		else:
 			messagebox.showinfo('Info','Not Converted! Currency Is Not Correct Or Check Your Network Connection Speed Is Slow Or Not If Slow Thats Why Currency Is Not Converted! If Your Connection Speed Is Fast MayBe Thats A Bug In My Programme You Are Free To Report Me At Mail:rishiratanpandey@gmail.com Or Check Network Connectivity!')
 	except UnboundLocalError:
@@ -66,8 +64,7 @@ result=ttk.Label(root,text='Converted Amount--:')
 result.place(x=1 ,y=140)
 amount_reslut=ttk.Label(root,textvariable=Amount_)
 amount_reslut.place(x=137 ,y=140)
+amount_reslut.place(x=135)
 to=ttk.Label(root,text='To')
 to.place(y=40,x=235)
 mainloop()
-
-# hmm..end
