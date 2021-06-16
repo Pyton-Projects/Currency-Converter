@@ -45,7 +45,14 @@ def conversion():
 		total_amount=(re.findall("\\d+\\.\\d+",Va))
 		for value___ in total_amount:
 			pass
-		if value11==' true':
+		if currency_value.get()=='Select Currency':
+			messagebox.showinfo('Info','Please Select A From Currency!')
+		elif currencies_value_to.get()=='Select Currency':
+			messagebox.showinfo('Info','Please Select A To Currency!')
+		elif currency_value.get()=='Select Currency' and currencies_value_to.get()=='Select Currency':
+			messagebox.showinfo('Info','Please Select A From,To Currency!')
+
+		elif value11==' true':
 			Amount_.set(f'{Amount_value.get()} {working_codes_from} = {value___} {working_codes_to}')
 		else:
 			messagebox.showinfo('Info','Not Converted! Currency Is Not Correct Or Check Your Network Connection Speed Is Slow Or Not If Slow Thats Why Currency Is Not Converted! If Your Connection Speed Is Fast MayBe Thats A Bug In My Programme You Are Free To Report Me At Mail:rishiratanpandey@gmail.com Or Check Network Connectivity!')
